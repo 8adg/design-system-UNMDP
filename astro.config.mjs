@@ -8,7 +8,10 @@ import tailwindcss from '@tailwindcss/vite';
 export default defineConfig({
     integrations: [
         starlight({
-            title: 'Manual de Identidad Institucional UNMDP',
+            title: 'Sistema de Diseño UNMDP',
+            logo: {
+                src: './src/assets/isoUNMDP.svg',
+            },
             customCss: ['./src/styles/custom.css'],
             sidebar: [
                 {

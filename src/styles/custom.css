@@ -99,3 +99,14 @@ h2 {
   font-size: 1rem !important;
   /* Forza el 1rem (18px) en el menú lateral de Starlight */
 }
+
+/* Modificar tamaño del logo institucional en el header */
+.site-title {
+  margin-left: 108px !important;
+  /* Margen izquierdo de 108px aprox */
+}
+
+.site-title img {
+  height: 27px !important;
+  width: auto !important;
+}
