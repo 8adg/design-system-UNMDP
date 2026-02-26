@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+:root {
+  /* Dark mode accent colors */
+  --sl-color-accent-low: #04092f;
+  --sl-color-accent: #0c1c8c;
+  --sl-color-accent-high: #a9b5f4;
+  --sl-color-text-accent: #cdd4f8;
+}
+
+:root[data-theme='light'] {
+  /* Light mode accent colors */
+  --sl-color-accent-low: #eef0fd;
+  --sl-color-accent: #0c1c8c;
+  --sl-color-accent-high: #060e46;
+  --sl-color-text-accent: #060e46;
+}
