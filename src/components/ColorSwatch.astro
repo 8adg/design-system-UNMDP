@@ -1,0 +1,115 @@
+---
+const { nombre, hex, pantone, rgb } = Astro.props;
+---
+
+<div class="swatch-card">
+  <!-- Bloque de Color -->
+  <div class="color-block" style={`background-color: ${hex};`}></div>
+  
+  <!-- Información -->
+  <div class="info-block">
+    <!-- USAMOS <p> EN LUGAR DE <H3> PARA EVITAR ESTILOS DE STARLIGHT -->
+    <p class="swatch-title">{nombre}</p>
+    
+    <div class="data-row">
+      <span class="label">HEX</span>
+      <span class="value">{hex}</span>
+    </div>
+    
+    {rgb && (
+      <div class="data-row">
+        <span class="label">RGB</span>
+        <span class="value">{rgb}</span>
+      </div>
+    )}
+    
+    {pantone && (
+      <div class="data-row">
+        <span class="label">Pantone</span>
+        <span class="value">{pantone}</span>
+      </div>
+    )}
+  </div>
+</div>
+
+<style>
+  .swatch-card {
+    /* RESET TOTAL DE MÁRGENES EXTERNOS */
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    background-color: #F0EFE9; 
+    border-radius: 18px; 
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1); 
+    border: 1px solid rgba(0,0,0,0.05);
+  }
+
+  .color-block {
+    width: 100%;
+    height: 130px; 
+    flex-shrink: 0;
+  }
+
+  .info-block {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; 
+    justify-content: center;
+  }
+
+  /* Clase personalizada para simular un H3 sin serlo */
+  .swatch-title {
+    margin: 0 0 12px 0 !important; /* Forzamos margin 0 arriba */
+    padding: 0 !important;
+    font-family: 'Roboto', 'Montserrat', sans-serif;
+    font-size: 22px;
+    font-weight: 500;
+    color: #333333;
+    line-height: 1.2;
+  }
+
+  .data-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-family: monospace;
+    font-size: 13px;
+    margin-bottom: 6px !important; /* Evitamos que Starlight separe los divs */
+    color: #666666;
+  }
+
+  .label {
+    font-weight: bold;
+    text-transform: uppercase;
+    opacity: 0.6;
+    font-size: 11px;
+    letter-spacing: 0.5px;
+  }
+
+  .value {
+    font-weight: 600;
+    color: #444;
+    user-select: all;
+  }
+
+  /* AJUSTE MODO OSCURO */
+  :global([data-theme='dark']) .swatch-card {
+    background-color: #1e293b;
+    border-color: #334155;
+  }
+
+  :global([data-theme='dark']) .swatch-title {
+    color: #ffffff;
+  }
+
+  :global([data-theme='dark']) .data-row,
+  :global([data-theme='dark']) .value {
+    color: #cbd5e1;
+  }
+</style>

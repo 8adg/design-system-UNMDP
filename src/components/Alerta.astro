@@ -1,0 +1,13 @@
+---
+interface Props {
+  titulo?: string;
+}
+const { titulo = "IMPORTANTE" } = Astro.props;
+---
+
+<div class="bg-[#DCE7F0] dark:bg-[#161F3D] text-[#0C1C8C] dark:text-[#A9B9F0] p-6 sm:p-8 my-8 w-full border border-[rgba(12,28,140,0.1)] dark:border-transparent">
+  <p class="font-sans font-bold uppercase text-[15px] tracking-widest m-0 mb-3">{titulo}</p>
+  <div class="text-[17px] leading-relaxed [&>p]:m-0 [&>strong]:text-[#0C1C8C] dark:[&>strong]:text-[#A9B9F0] [&>strong]:font-bold">
+    <slot />
+  </div>
+</div>

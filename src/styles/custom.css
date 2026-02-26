@@ -1,17 +1,101 @@
 @import "tailwindcss";
 
-:root {
-  /* Dark mode accent colors */
-  --sl-color-accent-low: #04092f;
-  --sl-color-accent: #0c1c8c;
-  --sl-color-accent-high: #a9b5f4;
-  --sl-color-text-accent: #cdd4f8;
+@theme {
+  /* --- PALETA DE COLORES UNMDP --- */
+  --color-unmdp-blue: #0C1C8C;
+  --color-unmdp-dark: #1F2033;
+  --color-unmdp-light: #F8F9FA;
+  --color-unmdp-green: #D8F3DD;
+  --color-unmdp-purple: #EAE6F3;
+  --color-unmdp-cream: #F0EFE9;
+
+  /* --- TIPOGRAFÍAS --- */
+  --font-sans: "Roboto", "Montserrat", sans-serif;
+  --font-serif: "Aleo", "Palatino Linotype", serif;
+
+  /* --- RADIOS --- */
+  --radius-3xl: 18px;
+  /* Ajustado al pedido de 18px */
+
+  /* --- MÓDULO BASE 9px (Espaciados personalizados) --- */
+  /* Esto nos permite usar clases como p-mod-1 (9px), p-mod-2 (18px), p-mod-3 (27px) */
+  --spacing-mod-1: 9px;
+  --spacing-mod-2: 18px;
+  --spacing-mod-3: 27px;
+  --spacing-mod-4: 36px;
+  --spacing-mod-6: 54px;
 }
 
-:root[data-theme='light'] {
-  /* Light mode accent colors */
-  --sl-color-accent-low: #eef0fd;
-  --sl-color-accent: #0c1c8c;
-  --sl-color-accent-high: #060e46;
-  --sl-color-text-accent: #060e46;
+/* --- CONFIGURACIÓN DE STARLIGHT (RITMO VERTICAL) --- */
+:root {
+  /* 1. Base del sistema: 18px / 27px */
+  --sl-text-base: 18px;
+  --sl-text-body: 18px;
+  --sl-line-height: 1.5;
+  /* 18px * 1.5 = 27px (Múltiplo de 9) */
+
+  /* 2. Escala Modular 1.333 (Perfect Fourth) */
+  --sl-text-h1: 4.209rem;
+  /* ~75.7px */
+  --sl-text-h2: 3.157rem;
+  /* ~56.8px */
+  --sl-text-h3: 2.369rem;
+  /* ~42.6px */
+  --sl-text-h4: 1.777rem;
+  /* ~32px */
+  --sl-text-h5: 1.333rem;
+  /* ~24px */
+  --sl-text-h6: 1rem;
+  /* 18px */
+
+  /* 3. Colores del Tema (Light Mode) */
+  --sl-color-accent-low: #e6e8f4;
+  --sl-color-accent: var(--color-unmdp-blue);
+  --sl-color-accent-high: #04092e;
+  --sl-color-text-accent: var(--color-unmdp-blue);
+  --sl-font: var(--font-sans);
+}
+
+/* --- MODO OSCURO --- */
+:root[data-theme='dark'] {
+  --sl-color-bg: var(--color-unmdp-dark);
+  --sl-color-bg-nav: #161726;
+  --sl-color-accent-low: #04092e;
+  --sl-color-accent: #4d64eb;
+  --sl-color-accent-high: #e6e8f4;
+  --sl-color-text-accent: #8b9cf2;
+}
+
+/* Ajuste fino: Forzar line-height en párrafos para asegurar los 27px */
+.sl-markdown-content p {
+  line-height: 27px;
+  margin-bottom: 27px;
+  /* Un módulo de ritmo vertical */
+}
+
+/* Modificar color a institucional en H1 y H2 */
+.sl-markdown-content h1,
+.sl-markdown-content h2,
+h1,
+h2 {
+  color: var(--color-unmdp-blue);
+}
+
+:root[data-theme='dark'] .sl-markdown-content h1,
+:root[data-theme='dark'] .sl-markdown-content h2,
+:root[data-theme='dark'] h1,
+:root[data-theme='dark'] h2 {
+  color: var(--color-unmdp-purple);
+  /* Usamos el purple u otro color más claro para modo oscuro para garantizar legibilidad */
+}
+
+/* Modificar tamaño de fuente del menú sidebar de navegación */
+.sidebar-nav,
+.sidebar-pane,
+.sidebar-content,
+.sidebar-content a,
+.sidebar-content summary,
+.sidebar-content h2.large {
+  font-size: 1rem !important;
+  /* Forza el 1rem (18px) en el menú lateral de Starlight */
 }

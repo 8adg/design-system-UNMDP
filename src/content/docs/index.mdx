@@ -1,40 +1,37 @@
 ---
-title: Welcome to Starlight
-description: Get started building your docs site with Starlight.
-template: splash # Remove or comment out this line to display the site sidebar on this page.
+title: Sistema de Diseño UNMDP
+description: Manual de Identidad y Sistema de Diseño de la Universidad Nacional de Mar del Plata.
+template: splash
 hero:
-  tagline: Congrats on setting up a new Starlight project!
+  tagline: Documentación oficial de la marca, recursos gráficos, UI Kit y pautas de comunicación institucional.
   image:
-    file: ../../assets/houston.webp
+    file: ../../assets/houston.webp # Luego cambiaremos esta imagen por el escudo de la UNMDP
   actions:
-    - text: Example Guide
-      link: /guides/example/
+    - text: Comenzar a explorar
+      link: /introduccion/presentacion/ # Ajusta esta ruta según la primera entrada de tu sidebar
       icon: right-arrow
-    - text: Read the Starlight docs
-      link: https://starlight.astro.build
-      icon: external
+      variant: primary
+    - text: Descargar Manual PDF
+      link: /assets/manual-unmdp.pdf
+      icon: document
       variant: minimal
 ---
 
 import { Card, CardGrid } from '@astrojs/starlight/components';
 
-## Next steps
+## Todo lo que necesitas en un solo lugar
 
 <CardGrid stagger>
-	<Card title="Update content" icon="pencil">
-		Edit `src/content/docs/index.mdx` to see this page change.
-	</Card>
-	<Card title="Change page layout" icon="document">
-		Delete `template: splash` in `src/content/docs/index.mdx` to display a
-		sidebar on this page.
-	</Card>
-	<Card title="Add new content" icon="add-document">
-		Add Markdown or MDX files to `src/content/docs` to create new pages.
-	</Card>
-	<Card title="Configure your site" icon="setting">
-		Edit your `sidebar` and other config in `astro.config.mjs`.
-	</Card>
-	<Card title="Read the docs" icon="open-book">
-		Learn more in [the Starlight Docs](https://starlight.astro.build/).
-	</Card>
+  <Card title="Identidad Visual" icon="pencil">
+    Logos, tipografías, paletas de colores y reglas de construcción para mantener la coherencia visual.
+  </Card>
+  <Card title="Recursos y Descargas" icon="add-document">
+    Archivos vectoriales (SVG, AI), plantillas de presentaciones y papelería listos para usar.
+  </Card>
+  <Card title="Gráfica Digital y UI" icon="laptop">
+    Componentes web, estilos para redes sociales y lineamientos para pantallas.
+  </Card>
+  <Card title="Merchandising e Impresos" icon="setting">
+    Sistematización de afiches, diplomas, indumentaria y rotulación vehicular.
+  </Card>
 </CardGrid>
