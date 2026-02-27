@@ -1,0 +1,64 @@
+---
+/**
+ * SiteTitle.astro — Override del componente SiteTitle de Starlight
+ * El isotipo isoUNMDP se incrusta como SVG inline para poder cambiar
+ * su color según el tema (azul institucional en claro, blanco en oscuro).
+ */
+const { siteTitle, siteTitleHref } = Astro.locals.starlightRoute;
+---
+
+<a href={siteTitleHref} class="site-title sl-flex">
+    <!-- Isotipo UNMDP incrustado como SVG inline — fill usa currentColor para adaptarse al tema -->
+    <svg
+        class="iso-unmdp"
+        width="54.761"
+        height="54"
+        viewBox="0 0 54.761 54"
+        xmlns="http://www.w3.org/2000/svg"
+        aria-hidden="true"
+        focusable="false"
+    >
+        <g transform="translate(-33.61 -5.5144)">
+            <path
+                d="m33.677 29.924c-0.82869 12.194 6.0376 22.848 18.35 27.939 7.8133 3.1964 20.125 1.6574 26.636-3.7883 2.7228-2.2493 5.3273-5.8008 6.6295-8.8788 0.47354-1.0654 1.3022-2.4861 1.8941-4.1434h-13.969c-5.6824 0-15.272 0.59192-16.692-7.5766-1.6574-9.7075 10.655-13.377 16.574-5.3273 1.4206 2.0125 0.82869 9.234 1.4206 2.8412 0.47354-4.3802-1.1838-8.8788-7.3398-11.246-1.7758-0.7103-4.9721-1.1838-6.5111-1.4206 4.0251-2.6044 13.496-0.11838 14.206 1.4206-3.3148-6.2744-11.838-7.4582-12.549-7.4582 3.078-1.1838 9.8259 0.59192 12.312 1.4206 3.9067 1.3022 7.103 3.4331 10.181 6.9846 1.4206 1.539 2.8412 3.7883 3.5515 5.3273-0.59192-2.1309-1.0655-3.7883-2.8412-6.6295-4.3802-6.9846-10.418-10.418-18.231-12.904-4.8537-1.6574-11.602-1.0655-15.982 0.82868-6.8663 2.9596-11.602 6.7479-15.153 13.733-1.1838 2.2493-2.4861 5.9192-2.4861 8.8788"
+                fill="currentColor"
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                stroke-width="1.1838"></path>
+        </g>
+    </svg>
+    <span translate="no">{siteTitle}</span>
+</a>
+
+<style>
+    @layer starlight.core {
+        .site-title {
+            align-items: center;
+            gap: var(--sl-nav-gap);
+            font-size: 1rem;
+            font-weight: 500;
+            text-decoration: none;
+            white-space: nowrap;
+            min-width: 0;
+            color: var(--sl-color-text-accent);
+        }
+
+        span {
+            overflow: hidden;
+        }
+
+        /* Isotipo: azul institucional en modo claro */
+        .iso-unmdp {
+            height: 27px;
+            width: auto;
+            flex-shrink: 0;
+            color: #0c1c8c; /* azul institucional UNMDP */
+            transition: color 0.2s ease;
+        }
+
+        /* Isotipo: blanco en modo oscuro */
+        :root[data-theme="dark"] .iso-unmdp {
+            color: #ffffff;
+        }
+    }
+</style>

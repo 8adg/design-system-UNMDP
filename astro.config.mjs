@@ -9,24 +9,27 @@ export default defineConfig({
     integrations: [
         starlight({
             title: 'Sistema de Diseño UNMDP',
-            logo: {
-                src: './src/assets/isoUNMDP.svg',
+            components: {
+                SiteTitle: './src/components/SiteTitle.astro',
             },
             customCss: ['./src/styles/custom.css'],
-            sidebar: [
-                {
-                    label: 'Identidad Visual',
-                    items: [
-                        { label: 'Colores Institucionales', link: '/identidad/colores/' }
-                    ]
+            defaultLocale: 'root',
+            locales: {
+                root: {
+                    label: 'Español',
+                    lang: 'es',
                 },
+            },
+            sidebar: [
+
                 {
                     label: 'Identidad Visual',
                     items: [
                         { label: 'Nuestra Marca', slug: 'identidad-visual/nuestra-marca' },
                         { label: 'Escudo', slug: 'identidad-visual/escudo' },
                         { label: 'Tipografías', slug: 'identidad-visual/tipografias' },
-                        { label: 'Colores', slug: 'identidad-visual/colores' }
+                        { label: 'Colores', slug: 'identidad-visual/colores' },
+                        { label: 'Ritmo y Grilla', slug: 'identidad-visual/ritmo' }
                     ]
                 },
                 {

@@ -1,0 +1,136 @@
+---
+const { family, name, usage, weights } = Astro.props;
+---
+
+<div class="type-card">
+    <div class="header">
+        <h3 style={`font-family: ${family}, sans-serif;`}>{name}</h3>
+        <span class="usage-badge">{usage}</span>
+    </div>
+
+    <!-- Muestra de alfabeto -->
+    <div class="specimen" style={`font-family: ${family}, sans-serif;`}>
+        <p class="alphabet">
+            Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll Mm Nn Ññ Oo Pp Qq Rr Ss Tt Uu Vv
+            Ww Xx Yy Zz
+        </p>
+        <p class="numbers">1234567890 ¿?!¡ @#%&</p>
+    </div>
+
+    <!-- Pesos disponibles -->
+    <div class="weights">
+        <span class="label">Pesos disponibles:</span>
+        <div class="weight-list">
+            {
+                weights
+                    .split(",")
+                    .map((w) => <span class="weight-tag">{w.trim()}</span>)
+            }
+        </div>
+    </div>
+</div>
+
+<style>
+    .type-card {
+        border: 1px solid #e5e7eb;
+        border-radius: 12px;
+        padding: 24px;
+        margin-bottom: 32px;
+        background: white;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    }
+
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 24px;
+        border-bottom: 1px solid #f3f4f6;
+        padding-bottom: 16px;
+    }
+
+    h3 {
+        font-size: 32px;
+        margin: 0 !important;
+        color: #111827;
+    }
+
+    .usage-badge {
+        background: #eef2ff;
+        color: #4f46e5;
+        font-size: 12px;
+        text-transform: uppercase;
+        font-weight: bold;
+        padding: 4px 12px;
+        border-radius: 99px;
+        font-family: sans-serif;
+    }
+
+    .specimen {
+        font-size: 20px;
+        line-height: 1.6;
+        color: #374151;
+        margin-bottom: 24px;
+        word-break: break-all;
+    }
+
+    .alphabet {
+        margin-bottom: 8px !important;
+    }
+    .numbers {
+        margin-top: 0 !important;
+        opacity: 0.7;
+    }
+
+    .weights {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .label {
+        font-size: 12px;
+        text-transform: uppercase;
+        color: #9ca3af;
+        font-weight: bold;
+        font-family: sans-serif;
+    }
+
+    .weight-list {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+    }
+
+    .weight-tag {
+        background: #f3f4f6;
+        color: #4b5563;
+        font-family: monospace;
+        font-size: 12px;
+        padding: 4px 8px;
+        border-radius: 4px;
+    }
+
+    /* Modo Oscuro */
+    :global([data-theme="dark"]) .type-card {
+        background: #1f2937;
+        border-color: #374151;
+    }
+    :global([data-theme="dark"]) h3 {
+        color: white;
+    }
+    :global([data-theme="dark"]) .specimen {
+        color: #d1d5db;
+    }
+    :global([data-theme="dark"]) .header {
+        border-color: #374151;
+    }
+    :global([data-theme="dark"]) .weight-tag {
+        background: #374151;
+        color: #e5e7eb;
+    }
+    :global([data-theme="dark"]) .usage-badge {
+        background: #312e81;
+        color: #a5b4fc;
+    }
+</style>

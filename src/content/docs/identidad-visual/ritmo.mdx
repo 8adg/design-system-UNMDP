@@ -1,0 +1,83 @@
+---
+title: Ritmo y Grilla
+description: Reglas matemáticas para la composición web y digital.
+---
+import Alerta from '../../../components/Alerta.astro';
+
+Para garantizar consistencia y armonía visual, todos los productos digitales de la UNMDP deben respetar las siguientes reglas matemáticas de composición.
+
+## Productos Web (UI/UX)
+
+En sitios web, aplicaciones y sistemas internos, utilizamos una escala basada en la **Proporción Áurea** para jerarquizar el contenido de lectura.
+
+| Variable | Valor | Detalle |
+| :--- | :--- | :--- |
+| **Tipografía Base** | **18px** | Tamaño mínimo legible para cuerpo de texto. |
+| **Alto de Línea** | **27px** (1.5) | Espacio óptimo para lectura sostenida. |
+| **Grilla Base** | **9px** | Módulo mínimo. Todo margen debe ser múltiplo de 9. |
+| **Subdivisión** | **x3** | Los bloques crecen de a 3 módulos (27px). |
+| **Ratio de Escala** | **1.618** | Sección Áurea (Golden Ratio). |
+
+<Alerta titulo="Regla de Oro Web">
+  Todo elemento en pantalla debe alinear su altura o margen a múltiplos de **9px** (9, 18, 27, 36, 45...).
+</Alerta>
+
+## Redes Sociales (Social Media)
+
+Para piezas gráficas de alto impacto (Instagram, LinkedIn), aumentamos la base para mejorar la legibilidad en móviles y usamos una escala más compacta.
+
+| Variable | Valor | Detalle |
+| :--- | :--- | :--- |
+| **Tipografía Base** | **24px** | Tamaño mínimo para lectura rápida en móvil. |
+| **Alto de Línea** | **36px** (1.5) | Mantiene la proporción de aire. |
+| **Grilla Base** | **8px** | Estándar de la industria digital (Soft Grid). |
+| **Subdivisión** | **x3** | Bloques de composición de 24px. |
+| **Ratio de Escala** | **1.5 / 1.333** | Perfect Fifth o Perfect Fourth (más suave). |
+
+## Producción Gráfica (Impresos)
+
+En piezas editoriales y de cartelería (InDesign, Scribus), el ritmo vertical es el sistema que organiza los elementos basándose en un espaciado constante derivado de la altura de línea (*line-height*).
+
+### Fórmula Básica
+
+El ritmo vertical se establece alineando todo texto y objeto a una cuadrícula base invisible.
+
+- **Tamaño de Fuente (pt):** Tamaño base (ej. 12 pt).
+- **Altura de Línea (leading):** Generalmente entre 120% y 150% del tamaño de fuente.
+- **Ritmo Vertical:** Es igual a la Altura de Línea final.
+
+> **Ejemplo:** Si tu fuente es de **12 pt** y usas un factor de 1.5, tu ritmo vertical (y tu cuadrícula base) será de **18 pt**.
+
+### Configuración de Software
+
+Al trabajar en software editorial, sigue estos pasos para garantizar la consistencia:
+
+1.  **Cuadrícula Base:** Configura la grilla del documento para que coincida exactamente con tu altura de línea (ej. 18 pt).
+2.  **Alineación:** Activa la opción "Alinear con cuadrícula base" en los estilos de párrafo del cuerpo de texto.
+3.  **Imágenes:** Asegúrate de que la altura de las imágenes sea siempre un múltiplo del ritmo vertical (ej. 54 pt, 72 pt).
+
+### Escalas Clásicas Recomendadas
+
+Para generar jerarquías tipográficas (Títulos vs. Subtítulos), utiliza multiplicadores armónicos:
+
+| Escala | Ratio | Uso sugerido |
+| :--- | :--- | :--- |
+| **Proporción Áurea** | 1.618 | Piezas de alto impacto estético. |
+| **Quinta Justa** | 1.500 | Revistas y folletería dinámica. |
+| **Cuarta Justa** | 1.333 | Documentos técnicos y memorias. |
+
+---
+
+### Descarga la Guía Técnica
+
+<div class="not-content">
+  <a href="/assets/ritmo-vertical-grafica.pdf" class="flex items-center gap-4 p-4 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 hover:shadow-md transition-all no-underline group">
+    <div class="bg-red-50 text-red-600 p-3 rounded-lg group-hover:bg-red-600 group-hover:text-white transition-colors">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><path d="M12 18v-6"/><path d="m9 15 3 3 3-3"/></svg>
+    </div>
+    <div>
+      <h4 class="font-bold text-gray-900 dark:text-white m-0 text-lg">Guía de Ritmo Vertical en Producción Gráfica</h4>
+      <p class="text-sm text-gray-500 dark:text-gray-400 m-0">PDF - Instrucciones paso a paso para Scribus/InDesign</p>
+    </div>
+  </a>
+</div>

@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Aleo:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Onest:wght@100..900&family=Roboto+Flex:opsz,wght@8..144,100..1000&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap');
 @import "tailwindcss";
 
 @theme {
@@ -10,7 +11,7 @@
   --color-unmdp-cream: #F0EFE9;
 
   /* --- TIPOGRAFÍAS --- */
-  --font-sans: "Roboto", "Montserrat", sans-serif;
+  --font-sans: "Roboto Flex", "Montserrat", sans-serif;
   --font-serif: "Aleo", "Palatino Linotype", serif;
 
   /* --- RADIOS --- */
@@ -73,20 +74,25 @@
   /* Un módulo de ritmo vertical */
 }
 
-/* Modificar color a institucional en H1 y H2 */
+/* Modificar color a institucional en H1, H2 y H3 */
 .sl-markdown-content h1,
 .sl-markdown-content h2,
+.sl-markdown-content h3,
 h1,
-h2 {
+h2,
+h3 {
   color: var(--color-unmdp-blue);
+  font-weight: 500 !important;
 }
 
 :root[data-theme='dark'] .sl-markdown-content h1,
 :root[data-theme='dark'] .sl-markdown-content h2,
+:root[data-theme='dark'] .sl-markdown-content h3,
 :root[data-theme='dark'] h1,
-:root[data-theme='dark'] h2 {
+:root[data-theme='dark'] h2,
+:root[data-theme='dark'] h3 {
   color: var(--color-unmdp-purple);
-  /* Usamos el purple u otro color más claro para modo oscuro para garantizar legibilidad */
+  /* Color más claro en modo oscuro para garantizar legibilidad */
 }
 
 /* Modificar tamaño de fuente del menú sidebar de navegación */
@@ -100,13 +106,9 @@ h2 {
   /* Forza el 1rem (18px) en el menú lateral de Starlight */
 }
 
-/* Modificar tamaño del logo institucional en el header */
-.site-title {
-  margin-left: 108px !important;
-  /* Margen izquierdo de 108px aprox */
+/* Color para los títulos de los desplegables del aside (ej: UX y Tono) */
+.sidebar-content summary .large {
+  color: #465fa5 !important;
 }
 
-.site-title img {
-  height: 27px !important;
-  width: auto !important;
-}
+/* El logo institucional ahora se gestiona desde src/components/SiteTitle.astro */
